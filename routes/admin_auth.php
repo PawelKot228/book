@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Admin\Auth;
 
 use App\Http\Controllers\Auth\LogoutController;
-use Route;
+use \Route;
 
 Route::middleware('guest:admin')->group(function () {
     Route::get('login', Login::class)
@@ -22,7 +22,7 @@ Route::prefix('password')
             ->name('reset');
     });
 
-Route::middleware('auth:admin')->group(function () {
+Route::middleware('auth.admin')->group(function () {
 //    Route::get('email/verify', Verify::class)
 //        ->middleware('throttle:6,1')
 //        ->name('verification.notice');

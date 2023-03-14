@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
@@ -12,6 +13,9 @@ module.exports = {
         extend: {
             backgroundColor: ['active'],
         }
+    },
+    daisyui: {
+        themes: ["light"],
     },
     content: [
         './app/**/*.php',
@@ -27,5 +31,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
+        require('daisyui'),
     ],
 }

@@ -81,6 +81,6 @@ class Reset extends Component
 
     public function render()
     {
-        return view('livewire.admin.auth.passwords.reset')->extends('layouts.auth');
+        return view('livewire.admin.auth.passwords.reset')->extends('admin.layouts.auth');
     }
 }

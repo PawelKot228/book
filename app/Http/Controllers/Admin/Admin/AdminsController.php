@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,6 @@ class AdminsController extends Controller
 {
     public function index()
     {
-
     }
 
     public function create()

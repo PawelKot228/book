@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="{{ config('admin.settings.panel_theme') }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,11 +20,13 @@
         @livewireStyles
         @livewireScripts
 
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body class="h-max h-screen">
+    <body>
         @yield('body')
     </body>
 </html>

@@ -23,6 +23,6 @@ class Verify extends Component
 
     public function render()
     {
-        return view('livewire.admin.auth.verify')->extends('layouts.auth');
+        return view('livewire.admin.auth.verify')->extends('admin.layouts.auth');
     }
 }
