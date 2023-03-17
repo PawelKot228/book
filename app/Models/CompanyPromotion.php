@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contractor extends Model
+class CompanyPromotion extends Model
 {
     protected $fillable = [
         'name',
         'description',
+        'from',
+        'to',
     ];
 }

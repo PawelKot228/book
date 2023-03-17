@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('contractor_promotions', function (Blueprint $table) {
+        Schema::create('company_promotions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('contractor_id')->constrained()->cascadeOnDelete();
             $table->string('name');
@@ -20,7 +20,7 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::table('contractor_promotions', function (Blueprint $table) {
+        Schema::table('company_promotions', function (Blueprint $table) {
             $table->dropConstrainedForeignId('contractor_id');
         });
 
