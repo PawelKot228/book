@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('service_promotions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('service_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('contractor_promotion_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('company_promotion_id')->constrained()->cascadeOnDelete();
             $table->decimal('price');
             $table->timestamps();
         });
@@ -20,7 +20,7 @@ return new class extends Migration {
     {
         Schema::table('service_promotions', function (Blueprint $table) {
             $table->dropConstrainedForeignId('service_id');
-            $table->dropConstrainedForeignId('contractor_promotion_id');
+            $table->dropConstrainedForeignId('company_promotion_id');
         });
 
         Schema::dropIfExists('service_promotions');

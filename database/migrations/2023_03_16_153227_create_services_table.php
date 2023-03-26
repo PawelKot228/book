@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contractor_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('contractor_category_id')->nullable()->constrained()->cascadeOnUpdate();
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('company_category_id')->nullable()->constrained()->cascadeOnUpdate();
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price');
@@ -21,8 +21,8 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('services', function (Blueprint $table) {
-            $table->dropConstrainedForeignId('contractor_id');
-            $table->dropConstrainedForeignId('contractor_category_id');
+            $table->dropConstrainedForeignId('company_id');
+            $table->dropConstrainedForeignId('company_category_id');
         });
 
         Schema::dropIfExists('services');

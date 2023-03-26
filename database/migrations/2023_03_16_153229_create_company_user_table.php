@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('company_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contractor_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('type')->default('employee');
         });
@@ -18,7 +18,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('company_user', function (Blueprint $table) {
-            $table->dropConstrainedForeignId('contractor_id');
+            $table->dropConstrainedForeignId('company_id');
             $table->dropConstrainedForeignId('user_id');
         });
 

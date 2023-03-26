@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('company_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contractor_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->text('description')->nullable();
             $table->timestamps();
@@ -19,7 +19,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('company_categories', function (Blueprint $table) {
-            $table->dropConstrainedForeignId('contractor_id');
+            $table->dropConstrainedForeignId('company_id');
         });
 
         Schema::dropIfExists('contractor_categories');
