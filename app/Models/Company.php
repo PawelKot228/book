@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Pivot\CompanyAppointment;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Company extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'description',
@@ -18,7 +21,7 @@ class Company extends Model
 
     public function owner(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function appointments(): HasManyThrough
