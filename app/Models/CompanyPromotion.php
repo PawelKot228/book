@@ -16,6 +16,6 @@ class CompanyPromotion extends Model
 
     public function servicePromotion(): HasMany
     {
-        return $this->hasMany(PromotionService::class);
+        return $this->hasMany(ServicePromotion::class);
     }
 }

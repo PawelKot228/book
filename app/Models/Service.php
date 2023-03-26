@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Models\Pivot\CompanyAppointment;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -23,5 +25,10 @@ class Service extends Model
     public function company(): HasOne
     {
         return $this->hasOne(Company::class);
+    }
+
+    public function promotionServices(): HasMany
+    {
+        return $this->hasMany(ServicePromotion::class);
     }
 }
