@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Pivot\CompanyAppointment;
+use App\Models\Pivot\CompanyUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Company extends Model
 {
@@ -24,9 +23,14 @@ class Company extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function appointments(): HasManyThrough
+    public function employees(): BelongsToMany
     {
-        return $this->hasManyThrough(Appointment::class, CompanyAppointment::class);
+        return $this->belongsToMany(User::class, CompanyUser::class);
+    }
+
+    public function appointments(): HasMany
+    {
+        return $this->hasMany(Appointment::class);
     }
 
     public function promotions(): HasMany

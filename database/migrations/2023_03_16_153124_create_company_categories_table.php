@@ -10,6 +10,8 @@ return new class extends Migration {
         Schema::create('company_categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
+            $table->string('category', 64);
+            $table->string('subcategory', 64);
             $table->string('name');
             $table->text('description')->nullable();
             $table->timestamps();

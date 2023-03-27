@@ -78,26 +78,57 @@ enum ServiceSubcategory: string
     public static function getCategory(self $subcategory): ServiceCategory
     {
         return match ($subcategory) {
-            self::HAIRCUTS, self::STYLING, self::COLORING, self::WAXING, self::MAKEUP, self::MANICURES_PEDICURES
-                => ServiceCategory::BEAUTY,
-            self::PERSONAL_TRAINING, self::YOGA, self::PILATES, self::CROSSFIT, self::DANCE_CLASSES
-                => ServiceCategory::FITNESS,
-            self::MASSAGE, self::ACUPUNCTURE, self::NUTRITION, self::SPA, self::SAUNA
-                => ServiceCategory::WELLNESS,
-            self::GENERAL_PRACTITIONER, self::DENTIST, self::DERMATOLOGIST, self::PSYCHOLOGIST, self::PHYSIOTHERAPIST
-                => ServiceCategory::MEDICAL,
-            self::CLEANING, self::HANDYMAN, self::GARDENING, self::PEST_CONTROL, self::PLUMBING
-                => ServiceCategory::HOME,
-            self::PHOTOGRAPHY, self::VIDEOGRAPHY, self::DJ, self::EVENT_PLANNING, self::CATERING
-                => ServiceCategory::EVENT,
-            self::TUTORING, self::LANGUAGE_CLASSES, self::MUSIC_CLASSES, self::ART_CLASSES, self::COOKING_CLASSES
-                => ServiceCategory::EDUCATION,
-            self::CAR_WASH, self::AUTO_MECHANIC, self::AUTO_BODY_REPAIR, self::CAR_RENTAL, self::DRIVING_LESSONS
-                => ServiceCategory::AUTOMOTIVE,
-            self::ACCOUNTING, self::LEGAL_SERVICES, self::MARKETING, self::IT_SERVICES, self::CONSULTING
-                => ServiceCategory::BUSINESS,
-            self::HOTEL, self::AIR_TRAVEL, self::CAR_RENTAL_TRAVEL, self::CRUISES, self::TOURS
-                => ServiceCategory::TRAVEL,
+            self::HAIRCUTS,
+            self::STYLING,
+            self::COLORING,
+            self::WAXING,
+            self::MAKEUP,
+            self::MANICURES_PEDICURES => ServiceCategory::BEAUTY,
+            self::PERSONAL_TRAINING,
+            self::YOGA,
+            self::PILATES,
+            self::CROSSFIT,
+            self::DANCE_CLASSES => ServiceCategory::FITNESS,
+            self::MASSAGE,
+            self::ACUPUNCTURE,
+            self::NUTRITION,
+            self::SPA,
+            self::SAUNA => ServiceCategory::WELLNESS,
+            self::GENERAL_PRACTITIONER,
+            self::DENTIST,
+            self::DERMATOLOGIST,
+            self::PSYCHOLOGIST,
+            self::PHYSIOTHERAPIST => ServiceCategory::MEDICAL,
+            self::CLEANING,
+            self::HANDYMAN,
+            self::GARDENING,
+            self::PEST_CONTROL,
+            self::PLUMBING => ServiceCategory::HOME,
+            self::PHOTOGRAPHY,
+            self::VIDEOGRAPHY,
+            self::DJ,
+            self::EVENT_PLANNING,
+            self::CATERING => ServiceCategory::EVENT,
+            self::TUTORING,
+            self::LANGUAGE_CLASSES,
+            self::MUSIC_CLASSES,
+            self::ART_CLASSES,
+            self::COOKING_CLASSES => ServiceCategory::EDUCATION,
+            self::CAR_WASH,
+            self::AUTO_MECHANIC,
+            self::AUTO_BODY_REPAIR,
+            self::CAR_RENTAL,
+            self::DRIVING_LESSONS => ServiceCategory::AUTOMOTIVE,
+            self::ACCOUNTING,
+            self::LEGAL_SERVICES,
+            self::MARKETING,
+            self::IT_SERVICES,
+            self::CONSULTING => ServiceCategory::BUSINESS,
+            self::HOTEL,
+            self::AIR_TRAVEL,
+            self::CAR_RENTAL_TRAVEL,
+            self::CRUISES,
+            self::TOURS => ServiceCategory::TRAVEL,
         };
     }
 }

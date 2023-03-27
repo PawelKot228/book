@@ -2,24 +2,23 @@
 
 namespace App\Models;
 
-use App\Models\Pivot\CompanyAppointment;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Service extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'name',
         'description',
         'price',
     ];
 
-    public function appointments(): HasManyThrough
+    public function appointments(): HasMany
     {
-        return $this->hasManyThrough(Appointment::class, CompanyAppointment::class);
+        return $this->hasMany(Appointment::class);
     }
 
     public function company(): HasOne
